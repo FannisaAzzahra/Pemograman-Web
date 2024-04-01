@@ -1,0 +1,24 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $selecteedBuah = $_POST['buah'];
+
+    if (isset($_POST['warna'])) {
+        $selectedWarna = $_POST['warna'];
+
+    } else {
+        $selectedWarna = [];
+    }
+
+    $selectedJenisKelamin = $_POST['jenis_kelamin'];
+
+    echo "Anda memilih buah: " . $selecteedBuah . "<br>";
+
+    if (!empty($selectedWarna)) {
+        echo "Warna Favorit Anda: " . implode(", ", $selectedWarna) . "<br>";
+
+    } else {
+        echo "Anda tidak memilih warna favorit.<br>";
+    }
+
+    echo "Jenis Kelamin Anda: " . $selectedJenisKelamin;
+}
