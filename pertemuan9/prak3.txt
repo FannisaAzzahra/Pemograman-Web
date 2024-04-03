@@ -1,0 +1,4 @@
+menuliskan kode:
+    ALTER TABLE user ADD level VARCHAR(5) NOT NULL;
+
+Selebihnya mengikuti langkah-langkah yang di lakukan pada localhost/phpmyadmin
