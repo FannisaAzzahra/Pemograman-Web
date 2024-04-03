@@ -1,0 +1,9 @@
+Tuliskan query untuk membuat tabel user menggunakan fungsi mysqli_query() (soal no 2)
+        CREATE TABLE user ( 
+        id INT PRIMARY KEY, 
+        username VARCHAR(50), 
+        password VARCHAR(50) 
+        );
+
+Tuliskan query untuk memasukkan dan ke tabel user menggunakan fungsi mysqli_query() (soal no 3)
+        INSERT INTO `user` (`id`, `username`, `password`) VALUES ('1', 'admin', MD5('123'));
