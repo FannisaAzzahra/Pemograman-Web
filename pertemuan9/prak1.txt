@@ -7,3 +7,4 @@ Tuliskan query untuk membuat tabel user menggunakan fungsi mysqli_query() (soal 
 
 Tuliskan query untuk memasukkan dan ke tabel user menggunakan fungsi mysqli_query() (soal no 3)
         INSERT INTO `user` (`id`, `username`, `password`) VALUES ('1', 'admin', MD5('123'));
+
