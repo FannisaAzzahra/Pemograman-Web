@@ -16,7 +16,7 @@ include 'fungsi/pesan_kilat.php';
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <title>Aplikasi Kantor Siapa</title>
+    <title>Aplikasi Kantor Fannisa Azzahra</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
 
@@ -219,7 +219,7 @@ include 'fungsi/pesan_kilat.php';
             </div>
 
             <button class="btn btn-primary w-100 py-2" type="submit">Masuk</button>
-            <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
+            <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
         </form>
     </main>
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
