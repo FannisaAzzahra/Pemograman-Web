@@ -1,7 +1,8 @@
 <?php 
-  $menu = 'bank_soal';
-?>
+  $menu = 'bank_soal'; 
 
+  include_once('model/bank_soal_model.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -52,35 +53,44 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Data Soal</h3>
+          <h3 class="card-title">Soal Survey</h3>
 
           <div class="card-tools">
-            <a href="bank_soal_form.php?act=tambah" class="btn btn-sm btn-primary">Tambah Data</a>
+           <a href="bank_soal_form.php?act=tambah" class="btn btn-sm btn-primary">Tambah Soal</a>
           </div>
         </div>
         <div class="card-body">
-            <table class="table table-sm table-bordered">
-                <thead>
-                    <tr>
-                        <td>No</td>
-                        <td>Kode Soal</td>
-                        <td>Soal</td>
-                        <td>Aksi</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>001</td>
-                        <td>Soal 1</td>
-                        <td>
-                            <a href="bank_soal_form.php?act=edit&id=1" class="btn btn-sm btn-warning" title="Edit Data"><i class="fa fa-edit"></i></a>
-                            <a href="bank_soal_action.php?act=hapus&id=1" class="btn btn-sm btn-danger" title="Hapus Data"><i class="fa fa-trash"></i></a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+          <table class="table table-sm table-bordered">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Kode Soal</th>
+                <th>Nama Soal</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
 
+              <?php 
+                $bank_soal = new BankSoal();
+                $data = $bank_soal->getData();
+
+                $i = 1;
+                while($row = $data->fetch_assoc()){
+                    echo '<tr>
+                      <td>'.$i.'</td>
+                      <td>'.$row['kode_soal'].'</td>
+                      <td>'.$row['nama_soal'].'</td>
+                      <td>
+                        <a title="Edit Data" href="bank_soal_form.php?act=edit&id='.$row['id_soal'].'" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                        <a onclick="return confirm(\'Apakah anda yakin menghapus data ini?\')" title="Hapus Data" href="bank_soal_action.php?act=delete&id='.$row['id_soal'].'" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                    </td>
+                    </tr>';
+                    $i++;
+                }
+              ?>
+            </tbody>
+          </table>
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
@@ -96,7 +106,7 @@
   <!-- /.content-wrapper -->
 
   <?php include_once('layouts/footer.php'); ?>
-
+  
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
@@ -111,7 +121,9 @@
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+
+<script src="plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="plugins/jquery-validation/additional-methods.min.js"></script>
+
 </body>
 </html>
